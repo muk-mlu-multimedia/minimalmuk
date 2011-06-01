@@ -1,6 +1,12 @@
 # minimalMuk
 
-Most naked you can get. WordPress theme based on Starkers for students of media & communication science at the Martin Luther University Halle-Wittenberg to learn the basics of HTML, CSS & WordPress.
+**Most naked & helpful you can get.**
+
+WordPress theme loosely based on [Starkers](http://starkerstheme.com/) with a lot of comments for fresh students of [media & communication science](http://www.medienkomm.uni-halle.de/) at the [Martin Luther University Halle-Wittenberg](http://www.uni-halle.de) to learn the basics of HTML, CSS & WordPress.
+
+## Credits
+
+This theme was created and is maintained by [Matthias Kretschmann](http://matthiaskretschmann.com) & [Anke Tornow](http://www.anketornow.de/)
 
 ## License
 

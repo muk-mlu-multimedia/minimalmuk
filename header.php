@@ -37,14 +37,14 @@
 
 <body <?php body_class(); ?>>
 	
-	<header>
+	<header id="oben">
 		<hgroup>
 			<h1><?php bloginfo('name'); ?></h1>
 			<p><?php bloginfo('description'); ?></p>
 		</hgroup>
 	</header>
 	
-	<nav role="main">
+	<nav id="menu" role="main">
 		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 	</nav>
 
