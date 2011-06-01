@@ -6,10 +6,6 @@
  * For example, puts together date-based pages if no date.php file exists.
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package WordPress
- * @subpackage Starkers
- * @since Starkers 3.1
  */
 
 get_header(); ?>
@@ -44,12 +40,39 @@ get_header(); ?>
 	 */
 	rewind_posts();
 
-	/* Run the loop for the archives page to output the posts.
-	 * If you want to overload this in a child theme then include a file
-	 * called loop-archives.php and that will be used instead.
-	 */
-	 get_template_part( 'loop', 'archive' );
-?>
+	/* If there are no posts to display, such as an empty archive page */ 
+	if (!have_posts()) : ?>
+	
+		<div class="notice">
+			<p>Sorry, nichts gefunden.</p>
+		</div>
+		<?php get_search_form(); ?>
+		
+	<?php endif; ?>
+	
+	<?php /* Start loop */ ?>
+	<?php while (have_posts()) : the_post(); ?>
+		
+		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
+			
+			<header>
+				<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
+				<time pubdate datetime="<?php the_time('c'); ?>"><?php printf( __('Posted on %s at %s.','roots'), get_the_time('l, F jS, Y'), get_the_time()) ?></time>
+				<p class="byline author vcard"><span class="fn"><?php the_author(); ?></span></p>
+			</header>
+			
+			<?php the_content('Weiterlesen >>'); ?>
+			
+			<footer>
+				<p>Kategorie: <?php the_category(', ') ?></p>
+				<p>Tags: <?php the_tags(', ') ?></p>
+			</footer>
+							
+		</article>
+		
+	<?php endwhile; ?>
+			
+	<?php endif; ?>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
