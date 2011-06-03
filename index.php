@@ -38,8 +38,6 @@ get_header(); ?>
 			</article>
 			
 		<?php endwhile; ?>
-				
-		<?php endif; ?>
 	
 	</section>
 	
