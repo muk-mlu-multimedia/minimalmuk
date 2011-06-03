@@ -28,16 +28,16 @@ em { font-style:italic }
 a img { border:none } /* Gets rid of IE's blue borders */
 
 
-
 /* TYPOGRAPHY */
 /* ----------------------------------------- */
 
 body {
-	
+	font-family: ; 	/*Put in a font stack from the following comment block*/
 }
 
-h1, h2, h3, h4, h5, h6 { 
-	font-weight:bold 
+h1, h2, h3, h4, h5, h6 {
+	font-family: ; 	/*Put in a font stack from the following comment block*/
+	font-weight: bold;
 } 
 
 
@@ -110,13 +110,40 @@ Verdana, Tahoma, Geneva, sans-serif - t
 /* LAYOUT */
 /* ----------------------------------------- */
 
+body {
+	overflow-y: scroll;	/*Always show the vertical scroll bar*/
+}
+
+/* We use a wrapper so we can center all the content and give it a max width */
+#wrapper {
+	max-width: 960px;	/* Everything will remain flexible with this */
+	margin: 0 auto; 	/* this centers elements which have a width defined */
+	padding: 1% 2%;		/* Give the content some room */
+}
+
 /*The main header*/
 #oben {
-	
+	background: #993c8c; /*Fakultätsfarbe Philosophische Fakultät i, ii und iii*/
+	color: #fff;
 }
 
 /*The main navigation menu*/
 #menu {
+	
+}
+
+/*The main content*/
+#content {
+	
+}
+
+/*The Sidebar*/
+#sidebar {
+	
+}
+
+/*The global Footer*/
+#unten {
 	
 }
 

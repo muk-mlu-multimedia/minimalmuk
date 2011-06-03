@@ -37,14 +37,17 @@
 
 <body <?php body_class(); ?>>
 	
-	<header id="oben">
-		<hgroup>
-			<h1><?php bloginfo('name'); ?></h1>
-			<p><?php bloginfo('description'); ?></p>
-		</hgroup>
-	</header>
+	<!-- We use a wrapper so we can center all the content and give it a max width in the css -->
+	<div id="wrapper">
 	
-	<nav id="menu" role="main">
-		<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
-	</nav>
+		<header id="oben">
+			<hgroup>
+				<h1><?php bloginfo('name'); ?></h1>
+				<p><?php bloginfo('description'); ?></p>
+			</hgroup>
+		</header>
+		
+		<nav id="menu" role="main">
+			<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
+		</nav>
 

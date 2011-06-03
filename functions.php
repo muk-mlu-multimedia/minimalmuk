@@ -22,6 +22,38 @@ function minimalmuk_widgets_init() {
 }
 add_action( 'widgets_init', 'twentyten_widgets_init' );
 
+// Cleanup WP head
+function minimalmuk_head_cleanup() {
+	// http://wpengineer.com/1438/wordpress-header/
+	//remove_action('wp_head', 'feed_links', 2);
+	//remove_action('wp_head', 'feed_links_extra', 3);
+	remove_action('wp_head', 'rsd_link');
+	remove_action('wp_head', 'wlwmanifest_link');
+	remove_action('wp_head', 'index_rel_link');
+	remove_action('wp_head', 'parent_post_rel_link', 10, 0);
+	remove_action('wp_head', 'start_post_rel_link', 10, 0);
+	remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+	remove_action('wp_head', 'wp_generator');
+	remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
+	remove_action('wp_head', 'noindex', 1);	
+	remove_action('wp_head', 'rel_canonical');	
+
+	// deregister l10n.js
+	if (!is_admin()) {
+		wp_deregister_script('l10n');
+	}
+}
+add_action('init', 'minimalmuk_head_cleanup');
+
+// Cleanup WP Dashboard
+function minimalmuk_remove_dashboard_widgets() {
+	remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');
+	remove_meta_box('dashboard_plugins', 'dashboard', 'normal');
+	remove_meta_box('dashboard_primary', 'dashboard', 'normal');
+	remove_meta_box('dashboard_secondary', 'dashboard', 'normal');
+}
+add_action('admin_init', 'minimalmuk_remove_dashboard_widgets');
+
 /**
  * Makes some changes to the <title> tag, by filtering the output of wp_title().
  *

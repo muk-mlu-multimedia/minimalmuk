@@ -28,7 +28,7 @@ get_header(); ?>
 					<p class="byline author vcard"><span class="fn"><?php the_author(); ?></span></p>
 				</header>
 				
-				<?php the_content('Weiterlesen >>'); ?>
+				<?php the_content(__( 'Continue reading &rarr;', 'twentyten' )); ?>
 				
 				<footer>
 					<p>Kategorie: <?php the_category(', ') ?></p>
