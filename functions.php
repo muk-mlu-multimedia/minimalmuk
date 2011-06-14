@@ -20,7 +20,7 @@ function minimalmuk_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 }
-add_action( 'widgets_init', 'twentyten_widgets_init' );
+add_action( 'widgets_init', 'minimalmuk_widgets_init' );
 
 // Cleanup WP head
 function minimalmuk_head_cleanup() {
