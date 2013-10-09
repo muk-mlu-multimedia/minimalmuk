@@ -42,6 +42,7 @@
 	
 		<header id="oben">
 			<hgroup>
+				<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
 				<h1><?php bloginfo('name'); ?></h1>
 				<p><?php bloginfo('description'); ?></p>
 			</hgroup>
