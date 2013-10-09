@@ -11,7 +11,7 @@ For the sake of simplification this theme has a lot of features removed. Using t
 ## Credits
 
 This theme was created by [Matthias Kretschmann](http://matthiaskretschmann.com) & [Anke Tornow](http://www.anketornow.de/)
-Further development by [Christian Zapf]
+Further development by Christian Zapf
 
 ## License
 
