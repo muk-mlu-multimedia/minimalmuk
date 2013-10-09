@@ -3,13 +3,33 @@ Theme Name: minimalMuk
 Theme URI: http://mukblogs.medienkomm.uni-halle.de
 Description: Most naked you can get. WordPress theme based on Starkers for students of media & communication science at the Martin Luther University Halle-Wittenberg to learn the basics of HTML, CSS & WordPress.
 Version: 1.0
-Author: Matthias Kretschmann
+Author: Matthias Kretschmann edited by Christian Zapf
 Author URI: http://matthiaskretschmann.com
 Tags: muk, minimal, mlu, starkers, naked, clean, basic
 */
 
 
-/* RESET */
+
+/*
+===========================
+CONTENTS:
+
+01 RESET
+02 TYPOGRAHPY
+  02.01 TYPOGRAPHY-CORRESPONDENCES
+  02.02 WEB-SAFE FONT STACKS
+  02.03 FONT-FACE-RULE
+03 LAYOUT
+  03.01 BOXES
+  03.02 CSS-BORDER-TRICK
+04 MEDIA QUERIES 
+05 OTHER
+===========================
+*/
+
+
+
+/* 01 RESET */
 /* ----------------------------------------- */
 /* Global reset */
 /* Based upon 'reset.css' in the Yahoo! User Interface Library: http://developer.yahoo.com/yui */
@@ -28,83 +48,91 @@ em { font-style:italic }
 a img { border:none } /* Gets rid of IE's blue borders */
 
 
-/* TYPOGRAPHY */
+
+/* 02 TYPOGRAPHY */
 /* ----------------------------------------- */
 
+
+        /* 02.01 TYPOGRAPHY-CORRESPONDENCES */
+        /* -------------------------------- */
+
+        /*
+        14 / 16	= 		0.875em 		(14px equivalent)
+        16 / 16	= 		1em 			(16px equivalent)
+        18 / 16 = 		1.125em 		(18px equivalent)
+        21 / 16 = 		1.3125em 		(21px equivalent)
+        24 / 16 = 		1.5em 			(24px equivalent)
+        30 / 16 = 		1.875em 		(30px equivalent)
+        */
+
+
+
 body {
-	font-family: ; 	/*Put in a font stack from the following comment block*/
+	font-family: ; 	/*Put in a web-safe font stack or use the @font-face rule below*/
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: ; 	/*Put in a font stack from the following comment block*/
+	font-family: ; 	/*Put in a web-safe font stack or use the @font-face rule below*/
 	font-weight: bold;
 } 
 
 
-/* Font stack options
 
-	The following represents a list of font stacks, as recommended by Nathan Ford in
-	http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/
+        /* 02.02 WEB-SAFE FONT STACKS */
+        /* -------------------------- */
 
-	- - - -
-
-Arial, "Helvetica Neue", Helvetica, sans-serif
-
-Baskerville, "Times New Roman", Times, serif
-Baskerville, "Times, Times New Roman", serif
-
-Cambria, Georgia, Times, "Times New Roman", serif
-"Century Gothic", "Apple Gothic", sans-serif
-
-Consolas, "Lucida Console", Monaco, monospace
-
-"Copperplate Light", "Copperplate Gothic Light", serif
-
-"Courier New", Courier, monospace
-
-"Franklin Gothic Medium", "Arial Narrow Bold", Arial, sans-serif
-
-Futura, "Century Gothic", "Apple Gothic", sans-serif
-
-Garamond, "Hoefler Text", "Times New Roman", Times, serif
-Garamond, "Hoefler Text", Palatino, "Palatino Linotype", serif
-
-Geneva, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif
-Geneva, Verdana, "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif
-
-Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif
-Georgia, Times, "Times New Roman", serif
-
-GillSans, Calibri, Trebuchet, sans-serif
-GillSans, Trebuchet, Calibri, sans-serif
-
-"Helvetica Neue", Arial, Helvetica, sans-serif
-Helvetica, "Helvetica Neue", Arial, sans-serif
-
-Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif
-
-"Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif
-
-Palatino, "Palatino Linotype", Georgia, Times, "Times New Roman", serif
-Palatino, "Palatino Linotype", "Hoefler Text", Times, "Times New Roman", serif
-
-Tahoma, Geneva, Verdana
-Tahoma, Verdana, Geneva
-
-Times, "Times New Roman", Georgia, serif
-
-Trebuchet, "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif
-Trebuchet, Tahoma, Arial, sans-serif
-
-Verdana, Geneva, Tahoma, sans-serif
-Verdana, Tahoma, Geneva, sans-serif
-
-*/
+        /*
+        Web-safe fonts are usually supported by every Browser and can be displayed on most devices.
+        A listing of web-safe font stacks, as recommended is provided by Nathan Ford:
+        http://unitinteractive.com/blog/2008/06/26/better-css-font-stacks/
+        */
 
 
 
-/* LAYOUT */
+        /* 02.03 FONT-FACE-RULE */
+        /* -------------------- */
+
+        /*
+        @font-face {
+            font-family: examplefont;
+            src: url('path/path/path/examplefont.ttf'),
+                 url('path/path/path/examplefont.eot');
+        }
+        */
+
+        /*
+        Eot-files are necessary with IE9, while Chrome, Opera and Safari support ttf-files. 
+        Additional values: font-stretch, font-style, font-weight.
+        For further informations: http://www.font-face.com
+        */
+
+
+
+/* 03 LAYOUT */
 /* ----------------------------------------- */
+
+
+        /* 03.01 BOXES */
+        /* ----------- */
+
+        /*
+
+                        margin
+        |---------------------------------------|
+        |               border                  |
+        |    |-----------------------------|    |
+        |    |          padding            |    |
+        |    |   |---------------------|   |    |
+        |    |   |      content        |   |    |
+        |    |   |---------------------|   |    |
+        |    |                             |    |
+        |    |-----------------------------|    |
+        |                                       |
+        |---------------------------------------|
+        
+        */
+
+
 
 body {
 	overflow-y: scroll;	/*Always show the vertical scroll bar*/
@@ -143,6 +171,52 @@ body {
 	
 }
 
+
+
+        /* 03.02 CSS-BORDER-TRICK */
+        /* ------------------ */
+
+        /* Uncomment the following to make borders visible */
+
+        /*
+        * *:hover { border:2px solid green }                   
+        * * *:hover { border:2px solid orange }                 
+        * * * *:hover { border:2px solid blue }             
+        * * * * *:hover { border:2px solid red }          
+        * * * * * *:hover { border:2px dotted black }        
+        * * * * * * *:hover { border:2px dotted pink }     
+        * * * * * * * *:hover { border:2px dotted yellowgreen }   
+        * * * * * * * * *:hover { border:2px dotted blue }   
+        */
+
+
+
+/* 04 MEDIA QUERIES */
+/* ----------------------------------------- */
+
+/* 400 and up */
+@media screen and (min-width:400px) {
+					{ /* Place your styles here for all widths greater than 400px */ }
+}
+
+/* Retina Display */
+@media screen and (-webkit-min-device-pixel-ratio:2) {
+					{ /* Place your styles here for all 'Retina' screens */ }
+}
+
+/* Print-View */
+/* 
+@media print {
+   div#oben,
+   div#sidebar,
+   div#unten { display: none; }
+ }
+*/
+
+
+
+/* 05 OTHER */
+/* ----------------------------------------- */
 
 /* These rather presentational classes are generated by WordPress, so it's useful to have some styles for them. Edit as you see fit. More info: http://codex.wordpress.org/CSS */
 .aligncenter { display:block; margin:0 auto }
