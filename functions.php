@@ -22,6 +22,20 @@ function minimalmuk_widgets_init() {
 }
 add_action( 'widgets_init', 'minimalmuk_widgets_init' );
 
+// Register Header
+$args = array(
+    'flex-height'            => false, /* Flexible hight (true|false) */
+    'height'                 => 350, /* Header hight */
+    'flex-width'             => false, /* Flexible width (true|false) */
+    'width'                  => 800, /* Header width */
+    'default-image'          => get_template_directory_uri() . '/img/default.jpg', /* Standard header img */
+    'random-default'         => false, /* random img circle if multiple imgs */
+    'header-text'            => false, /* header-text */
+    'uploads'                => true /* Accept user-uploads */
+);
+ 
+add_theme_support( 'custom-header', $args );
+
 // Cleanup WP head
 function minimalmuk_head_cleanup() {
 	// http://wpengineer.com/1438/wordpress-header/
