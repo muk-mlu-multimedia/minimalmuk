@@ -31,7 +31,7 @@ add_theme_support( 'custom-header', array(
 	// Header text color default
 	'default-text-color'		=> '000',
 	// Header image width (in pixels)
-	'width'				=> 1000,
+	'width'				=> 960,
 	// Header image height (in pixels)
 	'height'			=> 198,
 	// Header image random rotation default
