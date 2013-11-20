@@ -22,19 +22,27 @@ function minimalmuk_widgets_init() {
 }
 add_action( 'widgets_init', 'minimalmuk_widgets_init' );
 
-// Register Header
-$args = array(
-    'flex-height'            => false, /* Flexible hight (true|false) */
-    'height'                 => 350, /* Header hight */
-    'flex-width'             => false, /* Flexible width (true|false) */
-    'width'                  => 800, /* Header width */
-    'default-image'          => get_template_directory_uri() . '/img/default.jpg', /* Standard header img */
-    'random-default'         => false, /* random img circle if multiple imgs */
-    'header-text'            => false, /* header-text */
-    'uploads'                => true /* Accept user-uploads */
-);
- 
-add_theme_support( 'custom-header', $args );
+// Custom header
+add_theme_support( 'custom-header', array(
+	// Header image default
+	'default-image'			=> get_template_directory_uri() . '/images/headers/default.jpg',
+	// Header text display default
+	'header-text'			=> true,
+	// Header text color default
+	'default-text-color'		=> '000',
+	// Header image width (in pixels)
+	'width'				=> 1000,
+	// Header image height (in pixels)
+	'height'			=> 198,
+	// Header image random rotation default
+	'random-default'		=> false,
+	// Template header style callback
+	'wp-head-callback'		=> $wphead_cb,
+	// Admin header style callback
+	'admin-head-callback'		=> $adminhead_cb,
+	// Admin preview style callback
+	'admin-preview-callback'	=> $adminpreview_cb
+) );
 
 // Cleanup WP head
 function minimalmuk_head_cleanup() {
