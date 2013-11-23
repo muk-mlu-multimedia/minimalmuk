@@ -72,7 +72,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: ; 	/*Put in a web-safe font stack or use the @font-face rule below*/
+	font-family: ;	/*Put in a web-safe font stack or use the @font-face rule below*/
 	font-weight: bold;
 } 
 
@@ -142,13 +142,12 @@ body {
 #wrapper {
 	max-width: 960px;	/* Everything will remain flexible with this */
 	margin: 0 auto; 	/* this centers elements which have a width defined */
-	padding: 1% 2%;		/* Give the content some room */
+	padding: ;		/* Give the content some room */
 }
 
 /*The main header*/
 #oben {
-	background: #993c8c; /*Fakultätsfarbe Philosophische Fakultät i, ii und iii*/
-	color: #fff;
+
 }
 
 /*The main navigation menu*/

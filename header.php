@@ -40,13 +40,14 @@
 	<!-- We use a wrapper so we can center all the content and give it a max width in the css -->
 	<div id="wrapper">
 	
-		<header id="oben">
-			<hgroup>
-				<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-			</hgroup>
+		<header id="oben" class="site-header" role="banner">
+
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
+				<h2 class="site-description"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'description' ); ?></a></h2>
+
+					
 		</header>
-		
+
 		<nav id="menu" role="main">
 			<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 		</nav>
-
