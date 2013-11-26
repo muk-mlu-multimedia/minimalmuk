@@ -55,12 +55,11 @@ function minimalmuk_header_style() {
 		if ( ! empty( $header_image ) ) :
 	?>
 		.site-header {
+/* 		  Get the header dimensions from above to dynamically fill size values */
+		  <?php $theme_values = (get_theme_support( 'custom-header' )); ?>
 			background: url(<?php header_image(); ?>) no-repeat scroll top;
-			background-size: 960px auto;
-			min-height: <?php $theme_values = (get_theme_support( 'custom-header' )); 
-  		$height_value = $theme_values[0]['height'];
-  		echo $height_value;
-		?>px;
+			background-size: <?php echo $theme_values[0]['width']; ?>px auto;
+			min-height: <?php echo $theme_values[0]['height']; ?>px;
 		}
 	<?php
 		endif;
