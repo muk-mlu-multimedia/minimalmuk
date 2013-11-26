@@ -16,18 +16,7 @@
  * some default sidebar stuff just in case.
  */
 if ( ! dynamic_sidebar( 'primary-widget-area' ) ) : ?>
-
-		<li>
-			<?php get_search_form(); ?>
-		</li>
-
-		<li>
-			<h3><?php _e( 'Archives', 'twentyten' ); ?></h3>
-			<ul>
-				<?php wp_get_archives( 'type=monthly' ); ?>
-			</ul>
-		</li>
-
+<!-- Retain a minimal sidebar for login and backend links, so students don't get confused -->
 		<li>
 			<h3><?php _e( 'Meta', 'twentyten' ); ?></h3>
 			<ul>
