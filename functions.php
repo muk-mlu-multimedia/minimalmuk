@@ -33,7 +33,7 @@ add_theme_support( 'custom-header', array(
 	// Header text display default
 	'header-text'			=> true,
 	// Header text color default
-	'default-text-color'		=> '000',
+	'default-text-color'		=> '',
 	// Header image random rotation default
 	'random-default'		=> false,
 	// Template header style callback
@@ -57,7 +57,10 @@ function minimalmuk_header_style() {
 		.site-header {
 			background: url(<?php header_image(); ?>) no-repeat scroll top;
 			background-size: 960px auto;
-			min-height: 200px;
+			min-height: <?php $theme_values = (get_theme_support( 'custom-header' )); 
+  		$height_value = $theme_values[0]['height'];
+  		echo $height_value;
+		?>px;
 		}
 	<?php
 		endif;

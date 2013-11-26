@@ -39,7 +39,6 @@
 	
 	<!-- We use a wrapper so we can center all the content and give it a max width in the css -->
 	<div id="wrapper">
-	
 		<header id="oben" class="site-header" role="banner">
 
 				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a></h1>
@@ -47,7 +46,6 @@
 
 					
 		</header>
-
 		<nav id="menu" role="main">
 			<?php wp_nav_menu( array( 'container_class' => 'menu-header', 'theme_location' => 'primary' ) ); ?>
 		</nav>
