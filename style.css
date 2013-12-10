@@ -33,7 +33,7 @@ CONTENTS:
 /* ----------------------------------------- */
 /* Global reset */
 /* Based upon 'reset.css' in the Yahoo! User Interface Library: http://developer.yahoo.com/yui */
-html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td { margin:0; padding:0 }
+*, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td { margin:0; padding:0 }
 table { border-collapse:collapse; border-spacing:0 }
 fieldset, img { border:0 }
 address, caption, cite, code, dfn, em, strong, th, var { font-style:normal; font-weight:normal }
@@ -72,7 +72,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: ; 	/*Put in a web-safe font stack or use the @font-face rule below*/
+	font-family: ;	/*Put in a web-safe font stack or use the @font-face rule below*/
 	font-weight: bold;
 } 
 
@@ -142,13 +142,12 @@ body {
 #wrapper {
 	max-width: 960px;	/* Everything will remain flexible with this */
 	margin: 0 auto; 	/* this centers elements which have a width defined */
-	padding: 1% 2%;		/* Give the content some room */
+	padding: ;		/* Give the content some room */
 }
 
 /*The main header*/
 #oben {
-	background: #993c8c; /*Fakultätsfarbe Philosophische Fakultät i, ii und iii*/
-	color: #fff;
+
 }
 
 /*The main navigation menu*/
@@ -222,4 +221,4 @@ body {
 .aligncenter { display:block; margin:0 auto }
 .alignleft { float:left }
 .alignright { float:right }
-.wp-caption { text-align:center; background:#ccc; }
+.wp-caption { border:1px solid #666; text-align:center; background:#ccc; padding:10px; margin:10px }
