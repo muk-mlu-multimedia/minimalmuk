@@ -1,19 +1,24 @@
 <?php
 
+// register the theme translation
+load_theme_textdomain( 'minimalmuk', get_template_directory() . '/languages' );
+
+echo get_template_directory();
+
 // Add default posts and comments RSS feed links to head
 add_theme_support( 'automatic-feed-links' );
 
 // This theme uses wp_nav_menu() in one location.
 register_nav_menus( array(
-	'primary' => __( 'Primary Navigation', 'twentyten' ),
+	'primary' => __( 'Primary Navigation', 'minimalmuk' ),
 ));
 
 // Register Sidebar Widget Area
 function minimalmuk_widgets_init() {
 	register_sidebar( array(
-		'name' => __( 'Primary Widget Area', 'twentyten' ),
+		'name' => __( 'Primary Widget Area', 'minimalmuk' ),
 		'id' => 'primary-widget-area',
-		'description' => __( 'The primary widget area', 'twentyten' ),
+		'description' => __( 'The primary widget area', 'minimalmuk' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
 		'before_title' => '<h3 class="widget-title">',
@@ -157,10 +162,10 @@ function twentyten_filter_wp_title( $title, $separator ) {
 
 	if ( is_search() ) {
 		// If we're a search, let's start over:
-		$title = sprintf( __( 'Search results for %s', 'twentyten' ), '"' . get_search_query() . '"' );
+		$title = sprintf( __( 'Search results for %s', 'minimalmuk' ), '"' . get_search_query() . '"' );
 		// Add a page number if we're on page 2 or more:
 		if ( $paged >= 2 )
-			$title .= " $separator " . sprintf( __( 'Page %s', 'twentyten' ), $paged );
+			$title .= " $separator " . sprintf( __( 'Page %s', 'minimalmuk' ), $paged );
 		// Add the site name to the end:
 		$title .= " $separator " . get_bloginfo( 'name', 'display' );
 		// We're done. Let's send the new title back to wp_title():
@@ -177,7 +182,7 @@ function twentyten_filter_wp_title( $title, $separator ) {
 
 	// Add a page number if necessary:
 	if ( $paged >= 2 || $page >= 2 )
-		$title .= " $separator " . sprintf( __( 'Page %s', 'twentyten' ), max( $paged, $page ) );
+		$title .= " $separator " . sprintf( __( 'Page %s', 'minimalmuk' ), max( $paged, $page ) );
 
 	// Return the new title to wp_title():
 	return $title;
@@ -219,17 +224,17 @@ function twentyten_comment( $comment, $args, $depth ) {
 		<div id="comment-<?php comment_ID(); ?>">
 		<div class="comment-author vcard">
 			<?php echo get_avatar( $comment, 40 ); ?>
-			<?php printf( __( '%s <span class="says">says:</span>', 'twentyten' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+			<?php printf( __( '%s <span class="says">says:</span>', 'minimalmuk' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 		</div><!-- .comment-author .vcard -->
 		<?php if ( $comment->comment_approved == '0' ) : ?>
-			<em><?php _e( 'Your comment is awaiting moderation.', 'twentyten' ); ?></em>
+			<em><?php _e( 'Your comment is awaiting moderation.', 'minimalmuk' ); ?></em>
 			<br />
 		<?php endif; ?>
 
 		<div class="comment-meta commentmetadata"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>">
 			<?php
 				/* translators: 1: date, 2: time */
-				printf( __( '%1$s at %2$s', 'twentyten' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'twentyten' ), ' ' );
+				printf( __( '%1$s at %2$s', 'minimalmuk' ), get_comment_date(),  get_comment_time() ); ?></a><?php edit_comment_link( __( '(Edit)', 'minimalmuk' ), ' ' );
 			?>
 		</div><!-- .comment-meta .commentmetadata -->
 
@@ -246,7 +251,7 @@ function twentyten_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'twentyten' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'twentyten'), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'minimalmuk' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'minimalmuk'), ' ' ); ?></p>
 	<?php
 			break;
 	endswitch;

@@ -24,11 +24,11 @@ get_header(); ?>
 				
 				<header>
 					<h1><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h1>
-					<time pubdate datetime="<?php the_time('c'); ?>"><?php printf( __('Posted on %s at %s.','roots'), get_the_time('l, F jS, Y'), get_the_time()) ?></time>
+					<time pubdate datetime="<?php the_time('c'); ?>"><?php printf( __('Posted on %s at %s.','minimalmuk'), get_the_date(), get_the_time()) ?></time>
 					<p class="byline author vcard"><span class="fn"><?php the_author(); ?></span></p>
 				</header>
 				
-				<?php the_content(__( 'Continue reading &rarr;', 'twentyten' )); ?>
+				<?php the_content(__( 'Continue reading &rarr;', 'minimalmuk' )); ?>
 				
 				<footer>
 					<p>Kategorie: <?php the_category(', ') ?></p>

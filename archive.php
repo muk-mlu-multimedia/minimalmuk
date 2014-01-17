@@ -25,13 +25,13 @@ get_header(); ?>
 		
 		<h1>
 		<?php if ( is_day() ) : ?>
-						<?php printf( __( 'Daily Archives: %s', 'twentyten' ), get_the_date() ); ?>
+						<?php printf( __( 'Daily Archives: %s', 'minimalmuk' ), get_the_date() ); ?>
 		<?php elseif ( is_month() ) : ?>
-						<?php printf( __( 'Monthly Archives: %s', 'twentyten' ), get_the_date('F Y') ); ?>
+						<?php printf( __( 'Monthly Archives: %s', 'minimalmuk' ), get_the_date('F Y') ); ?>
 		<?php elseif ( is_year() ) : ?>
-						<?php printf( __( 'Yearly Archives: %s', 'twentyten' ), get_the_date('Y') ); ?>
+						<?php printf( __( 'Yearly Archives: %s', 'minimalmuk' ), get_the_date('Y') ); ?>
 		<?php else : ?>
-						<?php _e( 'Blog Archives', 'twentyten' ); ?>
+						<?php _e( 'Blog Archives', 'minimalmuk' ); ?>
 		<?php endif; ?>
 		</h1>
 	
@@ -63,7 +63,7 @@ get_header(); ?>
 					<p class="byline author vcard"><span class="fn"><?php the_author(); ?></span></p>
 				</header>
 				
-				<?php the_content(__( 'Continue reading &rarr;', 'twentyten' )); ?>
+				<?php the_content(__( 'Continue reading &rarr;', 'minimalmuk' )); ?>
 				
 				<footer>
 					<p>Kategorie: <?php the_category(', ') ?></p>
