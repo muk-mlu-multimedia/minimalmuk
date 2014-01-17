@@ -3,8 +3,6 @@
 // register the theme translation
 load_theme_textdomain( 'minimalmuk', get_template_directory() . '/languages' );
 
-echo get_template_directory();
-
 // Add default posts and comments RSS feed links to head
 add_theme_support( 'automatic-feed-links' );
 
