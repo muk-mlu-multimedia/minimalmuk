@@ -154,14 +154,74 @@ body {
 }
 
 /*The main navigation menu*/
+
 #menu {
   padding: 1em 0 1em 0; 
-  background-color: green;  
+  background-color: green;
 }
 
-#menu ul li {
-  display: inline-block;
-  margin: 0 1em 0 0;
+/*CSS only dropdown menu - works only if navigation is assigned as primary menu with child elements*/
+
+
+/*top level*/
+
+nav ul {
+  background: yellowgreen; 
+  width: 80%;
+  margin: 0 auto; /*centers elements with width defined*/
+  display: flex; /*creates a flexbox*/
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+}
+
+nav ul li {
+  display: inline-block; /*displays top-level entries inline*/
+  margin: 0 auto;
+  flex-grow: 1;/*forces all childs to the same size and to fill the parental element*/
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */
+    -webkit-flex: 1;          /* Chrome */
+}
+
+nav ul li:hover {
+  background: pink;
+}
+	
+nav ul li a {
+  display: block; /*displays links as block elements, thus making the whole area clickable*/
+  text-align: center;
+  padding: 25px 20px;
+}
+
+
+/*lower levels*/
+
+nav ul ul {
+  display: none; /*each ul within an ul will not be displayed*/
+}
+
+nav ul li:hover > ul {
+  display: block; /*each ul within an ul will be displayed, if an li of the parental ul is hovered*/
+  position: absolute; /*when flying out other styles will not be affected*/
+  width: auto; /*for not taking over parental width*/
+}
+
+nav ul ul li {
+  position:relative;
+  display: block; /*displays items below each other*/
+}
+
+nav ul ul ul {
+  position: absolute; 
+  width: auto;    
+  left: 100%; 
+  top: 0;
+}
+
+nav ul ul ul li a {
+  white-space: nowrap; /*prevents linebreaks*/
 }
 
 /*The main content*/
