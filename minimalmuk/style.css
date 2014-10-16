@@ -69,11 +69,12 @@ a img { border:none } /* Gets rid of IE's blue borders */
 
 
 body {
-  font-family: ;  /*Put in a web-safe font stack or use the @font-face rule below*/
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: ;  /*Put in a web-safe font stack or use the @font-face rule below*/
+  font-size: 1.5em;    
   font-weight: bold;
 } 
 
@@ -143,32 +144,54 @@ body {
 #wrapper {
   max-width: 960px; /* Everything will remain flexible with this */
   margin: 0 auto;   /* this centers elements which have a width defined */
-  padding: ;    /* Give the content some room */
+  padding: 0.5em;    /* Give the content some room */
+  background-color: blue;
 }
 
 /*The main header*/
 #oben {
-  
+  background-color: red;  
 }
 
 /*The main navigation menu*/
 #menu {
-  
+  padding: 1em 0 1em 0; 
+  background-color: green;  
+}
+
+#menu ul li {
+  display: inline-block;
+  margin: 0 1em 0 0;
 }
 
 /*The main content*/
 #content {
-  
+  background-color: yellow;
+  float:left;
+  width: 65%;
 }
 
+article {
+  margin-bottom: 2em;
+}
+
+article header {
+  margin-bottom: 0.5em;
+}
+
+article footer {
+  margin-top: 0.5em;
+}
 /*The Sidebar*/
 #sidebar {
-  
+  background-color: pink;
+  display: inline-block;
+    width: 35%;
 }
 
 /*The global Footer*/
 #unten {
-  
+  background-color: grey;  
 }
 
 
