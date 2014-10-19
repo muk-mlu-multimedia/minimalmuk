@@ -178,7 +178,6 @@ nav ul {
 
 nav ul li {
   display: inline-block; /*displays top-level entries inline*/
-  margin: 0 auto;
   flex-grow: 1;/*forces all childs to the same size and to fill the parental element*/
     -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
     -moz-box-flex: 1;         /* OLD - Firefox 19- */
