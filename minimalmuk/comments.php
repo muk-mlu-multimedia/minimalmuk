@@ -4,8 +4,11 @@
  *
  * The area of the page that contains both current comments
  * and the comment form.  The actual display of comments is
- * handled by a callback to twentyten_comment which is
+ * handled by a callback to minimalmuk_comment which is
  * located in the functions.php file.
+ *
+ * @package minimalMuk
+ * @since minimalMuk 1.1.1
  */
 ?>
 
@@ -39,12 +42,12 @@
 			<ol>
 				<?php
 					/* Loop through and list the comments. Tell wp_list_comments()
-					 * to use twentyten_comment() to format the comments.
+					 * to use minimalmuk_comment() to format the comments.
 					 * If you want to overload this in a child theme then you can
-					 * define twentyten_comment() and that will be used instead.
-					 * See twentyten_comment() in twentyten/functions.php for more.
+					 * define minimalmuk_comment() and that will be used instead.
+					 * See minimalmuk_comment() in minimalmuk/functions.php for more.
 					 */
-					wp_list_comments( array( 'callback' => 'twentyten_comment' ) );
+					wp_list_comments( array( 'callback' => 'minimalmuk_comment' ) );
 				?>
 			</ol>
 

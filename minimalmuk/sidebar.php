@@ -1,13 +1,16 @@
 <?php
 /**
  * The Sidebar containing the primary widget area.
+ *
+ * @package minimalMuk
+ * @since minimalMuk 1.1.1
  */
 ?>
 
-	<aside id="sidebar">
+	<aside class="sidebar">
 		
 	
-		<ul class="xoxo">
+		<ul>
 
 <?php
 /* When we call the dynamic_sidebar() function, it'll spit out

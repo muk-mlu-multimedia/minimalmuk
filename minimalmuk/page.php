@@ -1,11 +1,14 @@
 <?php
 /**
  * The template for displaying all pages (instead of posts)
+ *
+ * @package minimalMuk
+ * @since minimalMuk 1.1.1
  */
 
 get_header(); ?>
 
-	<section id="content">
+	<section class="content">
 	
 		<?php /* Start loop */ ?>
 		<?php while (have_posts()) : the_post(); ?>

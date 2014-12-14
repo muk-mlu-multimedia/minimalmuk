@@ -1,38 +1,17 @@
+@charset "utf-8";
+
 /*
 Theme Name: minimalMuk
 Theme URI: http://mukblogs.medienkomm.uni-halle.de
-Github Theme URI: https://github.com/dotdotfx/minimalmuk
-Description: Most naked you can get. WordPress theme based on Starkers for students of media & communication science at the Martin Luther University Halle-Wittenberg to learn the basics of HTML, CSS & WordPress.
-Version: 1.1.1
+Github Theme URI: https://github.com/muk-mlu-multimedia/minimalmuk
+Description: WordPress base theme for students of Media & Communication Sciences at the Martin Luther University Halle-Wittenberg to learn the basics of HTML, CSS & WordPress. Comes preconfigured with a flexible header image, 960px max-width wrapper and flexible regions (.site-header, nav, .content, .sidebar and .page-footer. <strong>Note:</strong>: The plugin <a href="https://github.com/muk-mlu-multimedia/mm-devtools" target="_blank">minimalmuk Developer Tools</a> works best with this theme.
+Version: 2.0.0
 Author:  Tobias Grasse, originally developed by Matthias Kretschmann
 Author URI: http://www.medienkomm.uni-halle.de
 Tags: muk, minimal, mlu, starkers, naked, clean, basic
 */
 
-
-
-/*
-===========================
-CONTENTS:
-
-01 RESET
-02 TYPOGRAPHY
-  02.01 TYPOGRAPHY-CORRESPONDENCES
-  02.02 WEB-SAFE FONT STACKS
-  02.03 FONT-FACE-RULE
-03 LAYOUT
-  03.01 BOXES
-  03.02 CSS-BORDER-TRICK
-04 MEDIA QUERIES 
-05 OTHER
-===========================
-*/
-
-
-
-/* 01 RESET */
-/* ----------------------------------------- */
-/* Global reset */
+/* RESET */
 /* Based upon 'reset.css' in the Yahoo! User Interface Library: http://developer.yahoo.com/yui */
 *, html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, label, fieldset, input, p, blockquote, th, td { margin:0; padding:0 }
 table { border-collapse:collapse; border-spacing:0 }
@@ -42,7 +21,7 @@ ol, ul, li { list-style:none }
 caption, th { text-align:left }
 h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal }
 q:before, q:after { content:''}
-/* Global reset-RESET */
+
 /* The below restores some sensible defaults */
 strong { font-weight:bold }
 em { font-style:italic }
@@ -50,123 +29,36 @@ a img { border:none } /* Gets rid of IE's blue borders */
 
 
 
-/* 02 TYPOGRAPHY */
-/* ----------------------------------------- */
-
-
-        /* 02.01 TYPOGRAPHY-CORRESPONDENCES */
-        /* -------------------------------- */
-
-        /*
-        14 / 16 =     0.875em     (14px equivalent)
-        16 / 16 =     1em       (16px equivalent)
-        18 / 16 =     1.125em     (18px equivalent)
-        21 / 16 =     1.3125em    (21px equivalent)
-        24 / 16 =     1.5em       (24px equivalent)
-        30 / 16 =     1.875em     (30px equivalent)
-        */
-
-
+h1,h2,h3,h4,h5,h6 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: ;  /*Put in a web-safe font stack or use the @font-face rule below*/
-  font-size: 1.5em;    
-  font-weight: bold;
-} 
-
-
-
-        /* 02.02 WEB-SAFE FONT STACKS */
-        /* -------------------------- */
-
-        /*
-        Web-safe fonts are usually supported by every Browser and can be displayed on most devices.
-        A listing of web-safe font stacks, as recommended is provided by Amrinder Sandhu:
-        http://www.awayback.com/revised-font-stack/
-        */
-
-
-
-        /* 02.03 FONT-FACE-RULE */
-        /* -------------------- */
-
-        /*
-        @font-face {
-            font-family: examplefont;
-            src: url('path/path/path/examplefont.ttf'),
-                 url('path/path/path/examplefont.eot');
-        }
-        */
-
-        /*
-        Eot-files are necessary with IE9, while Chrome, Opera and Safari support ttf-files. 
-        Additional values: font-stretch, font-style, font-weight.
-        For further informations: http://www.font-face.com
-        */
-
-
-
-/* 03 LAYOUT */
-/* ----------------------------------------- */
-
-
-        /* 03.01 BOXES */
-        /* ----------- */
-
-        /*
-
-                        margin
-        |---------------------------------------|
-        |               border                  |
-        |    |-----------------------------|    |
-        |    |          padding            |    |
-        |    |   |---------------------|   |    |
-        |    |   |      content        |   |    |
-        |    |   |---------------------|   |    |
-        |    |                             |    |
-        |    |-----------------------------|    |
-        |                                       |
-        |---------------------------------------|
-        
-        */
-
-
-
-body {
-  overflow-y: scroll; /*Always show the vertical scroll bar*/
-}
-
 /* We use a wrapper so we can center all the content and give it a max width */
-#wrapper {
+.wrapper {
   max-width: 960px; /* Everything will remain flexible with this */
   margin: 0 auto;   /* this centers elements which have a width defined */
-  padding: 0.5em;    /* Give the content some room */
-  background-color: blue;
-}
-
-/*The main header*/
-#oben {
-  background-color: red;  
+  padding: 10px; /* Give the content some room, fixed value for outside 960 gutters */
 }
 
 /*The main navigation menu*/
-
-#menu {
+nav {
   padding: 1em 0 1em 0; 
-  background-color: green;
 }
 
-/*CSS only dropdown menu - works only if navigation is assigned as primary menu with child elements*/
+.site-title, .site-description {
+  background-color: rgba(0, 0, 0, 0.5);
+}
 
+/* CSS only dropdown menu - works only if navigation is assigned as primary menu with child elements */
 
 /*top level*/
 
 nav ul {
-  background: yellowgreen; 
   width: 80%;
   margin: 0 auto; /*centers elements with width defined*/
   display: flex; /*creates a flexbox*/
@@ -182,10 +74,6 @@ nav ul li {
     -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
     -moz-box-flex: 1;         /* OLD - Firefox 19- */
     -webkit-flex: 1;          /* Chrome */
-}
-
-nav ul li:hover {
-  background: pink;
 }
 	
 nav ul li a {
@@ -223,9 +111,8 @@ nav ul ul ul li a {
   white-space: nowrap; /*prevents linebreaks*/
 }
 
-/*The main content*/
-#content {
-  background-color: yellow;
+/* Sensible defaults for the layout and spacing */
+.content {
   float:left;
   width: 65%;
 }
@@ -241,64 +128,11 @@ article header {
 article footer {
   margin-top: 0.5em;
 }
-/*The Sidebar*/
-#sidebar {
-  background-color: pink;
+
+.sidebar {
   display: inline-block;
     width: 35%;
 }
-
-/*The global Footer*/
-#unten {
-  background-color: grey;  
-}
-
-
-
-        /* 03.02 CSS-BORDER-TRICK */
-        /* ------------------ */
-
-        /* Uncomment the following to make borders visible */
-
-        /*
-        * *:hover { border:2px solid green }                   
-        * * *:hover { border:2px solid orange }                 
-        * * * *:hover { border:2px solid blue }             
-        * * * * *:hover { border:2px solid red }          
-        * * * * * *:hover { border:2px dotted black }        
-        * * * * * * *:hover { border:2px dotted pink }     
-        * * * * * * * *:hover { border:2px dotted yellowgreen }   
-        * * * * * * * * *:hover { border:2px dotted blue }   
-        */
-
-
-
-/* 04 MEDIA QUERIES */
-/* ----------------------------------------- */
-
-/* 400 and up */
- @media screen and (min-width:400px) {
-        /* element to style here */ { /* Place your styles here for all widths greater than 400px */ }
-}
-
-/* Retina Display */
-@media screen and (-webkit-min-device-pixel-ratio:2) {
-        /* element to style here */ { /* Place your styles here for all 'Retina' screens */ }
-}
-
-/* Print-View */
-/* 
-@media print {
-   div#oben,
-   div#sidebar,
-   div#unten { display: none; }
- }
-*/
-
-
-
-/* 05 OTHER */
-/* ----------------------------------------- */
 
 /* These rather presentational classes are generated by WordPress, so it's useful to have some styles for them. Edit as you see fit. More info: http://codex.wordpress.org/CSS */
 .aligncenter { display:block; margin:0 auto }
