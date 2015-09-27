@@ -3,20 +3,31 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: minimalmuk theme\n"
-"POT-Creation-Date: 2014-12-14 12:21+0100\n"
-"PO-Revision-Date: 2014-12-14 12:21+0100\n"
+"POT-Creation-Date: 2015-09-27 15:34+0100\n"
+"PO-Revision-Date: 2015-09-27 23:27+0100\n"
 "Last-Translator: \n"
-"Language-Team:  <tobias.grasse@medienkomm.uni-halle.de>\n"
+"Language-Team: Tobias Grasse <tobias.grasse@medienkomm.uni-halle.de>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.1\n"
+"X-Generator: Poedit 1.8.1\n"
 "X-Poedit-Basepath: ../\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __\n"
+"X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: ..\n"
+
+#: ../minimalmuk/404.php:11
+#, fuzzy
+msgid "Not Found"
+msgstr "nichts gefunden"
+
+#: ../minimalmuk/404.php:12
+msgid ""
+"Apologies, but the page you requested could not be found. Perhaps searching "
+"will help."
+msgstr ""
 
 #: ../minimalmuk/archive.php:31
 #, php-format
@@ -32,6 +43,11 @@ msgstr "Monatsarchiv: %s"
 #, php-format
 msgid "Yearly Archives: %s"
 msgstr "Jahresarchiv: %s"
+
+#: ../minimalmuk/archive.php:37
+#, fuzzy
+msgid "Blog Archives"
+msgstr "Tagesarchiv: %s"
 
 #: ../minimalmuk/archive.php:52 ../minimalmuk/index.php:17
 msgid "Sorry, nothing found."
@@ -57,6 +73,11 @@ msgstr "﻿Kategorie"
 msgid "Tags"
 msgstr "﻿Schlagwörter"
 
+#: ../minimalmuk/comments.php:16
+msgid ""
+"This post is password protected. Enter the password to view any comments."
+msgstr ""
+
 #: ../minimalmuk/comments.php:38 ../minimalmuk/comments.php:55
 msgid "&larr; Older Comments"
 msgstr "&larr; Ältere Kommentare"
@@ -64,6 +85,10 @@ msgstr "&larr; Ältere Kommentare"
 #: ../minimalmuk/comments.php:39 ../minimalmuk/comments.php:56
 msgid "Newer Comments &rarr;"
 msgstr "Neuere Kommentare &rarr;"
+
+#: ../minimalmuk/comments.php:66
+msgid "Comments are closed."
+msgstr ""
 
 #: ../minimalmuk/footer.php:13
 msgid ""
@@ -102,6 +127,11 @@ msgstr "Seite %s"
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">sagt:</span>"
 
+#: ../minimalmuk/functions.php:234
+#, fuzzy
+msgid "Your comment is awaiting moderation."
+msgstr "Dein Kommentar wartet auf Freischaltung."
+
 #: ../minimalmuk/functions.php:241
 #, php-format
 msgid "%1$s at %2$s"
@@ -110,3 +140,11 @@ msgstr "%1$s um %2$s"
 #: ../minimalmuk/functions.php:241 ../minimalmuk/functions.php:258
 msgid "(Edit)"
 msgstr "﻿Editieren"
+
+#: ../minimalmuk/functions.php:258
+msgid "Pingback:"
+msgstr ""
+
+#: ../minimalmuk/sidebar.php:24
+msgid "Meta"
+msgstr ""
